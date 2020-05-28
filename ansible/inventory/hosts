@@ -1,2 +1,6 @@
 [targetserver-example]
-192.168.145.133
+192.168.145.133 ansible_user=root ansible_password=redhat
+
+[test]
+192.168.145.132 ansible_user=root ansible_password=redhat 
+

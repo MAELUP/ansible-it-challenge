@@ -1,9 +1,17 @@
 ---
-- hosts: targetserver-example 
+- hosts: test 
   gather_facts: yes
   become: yes
   become_user: root
-# become_method: sudo
-  roles:
-   - sec-guid-example
-   - sec-guid-example  
+  become_method: sudo
+  tasks: 
+   - name: facts returned by facter
+     setup:
+      gather_subset: all 
+     register: r
+
+   - name: show fact 
+     debug: 
+      var: r
+
+
